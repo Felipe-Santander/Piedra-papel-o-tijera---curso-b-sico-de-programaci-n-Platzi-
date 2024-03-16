@@ -3,18 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>piedra, pepel o tijera</title>
     <script>
         //codigo donde vamos a programar la estructura para saber que entrada de datos fue, si piedra == 1, papel == 2 o tijera == 3
+        //funcion para que la variable pc escoja de forma aleatoria 
+        //
+        //
+        //el Math.random nos sirve para quitar los decimales ejemplo 3.45411 = 3
+        //El Math.floor invoca el numero decimal
+        comienzo = 1; 
+        finaliza = 3;
+
         jugador = 0;
-        jugador = prompt("ingrese 1 para piedra, 2 para papel, 3 para tijera: ");
+        pc = Math.floor(Math.random()*(comienzo+finaliza+1)+comienzo); 
+        
+        jugador = prompt("ingrese 1 para piedra 🗿, 2 para papel 📝, 3 para tijera ✂: ");
         if(jugador == 1){
-            alert("Tu ficha es piedra");
+            alert("Tu ficha es piedra 🗿");
         }else if(jugador == 2){
-            alert("Tu ficha es papel");
+            alert("Tu ficha es papel 📝");
         }else if(jugador == 3){
-            alert("Tu ficha es tijera");
-        }else alert("+++perdiste elige una ficha+++");
+            alert("Tu ficha es tijera ✂");
+        }else {
+            alert("❌❌❌+++perdiste elige una ficha+++❌❌❌");
+        }
+
+        //codigo donde explica que numero eligio el pc y con base a eso saber que eligio 
+        if(pc == 1){
+            alert("El computador eligio piedra 🗿");
+        }else if(pc == 2){
+            alert("El computador eligio papel 📝");
+        }else if(pc == 3){
+            alert("El computador eligio piedra ✂");
+        }
+        // combate 
+
+        if(jugador == pc){
+            alert("🟰 Empate 🟰")
+        }else if( jugador == 1 && pc == 3){
+            alert("Ganaste my brother🏆")
+        } else if(jugador == 2 && pc == 1){
+            alert("ganaste my brother🏆")
+        } else if(jugador == 3 && pc == 2){
+            alert("Ganaste my brother🏆")
+        } else {
+            alert("❌❌❌ perdiste compañero :( ❌❌❌")
+        }
+
     </script>
 </head>
 <body>
